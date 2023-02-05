@@ -1,11 +1,6 @@
 ### TO DO
 
-- [ ] Mercury
-- [x] Venus
-- [x] Earth (Orbit/Moon)
-- [x] Mars
-- [ ] Jupiter
-- [ ] Saturn
-- [ ] Uranus
-- [ ] Neptune
-- [ ] Comet Haley
+- [x] 100 projects course
+- [ ] Numerical methods
+- [ ] Physics problems
+- [ ] Advanced physics problems
