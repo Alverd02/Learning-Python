@@ -1,43 +1,37 @@
-def sum(a,b):
-    x = a+b
+def sum(a, b):
+    x = a + b
     return x
-def subs(a,b):
-    x = a-b
+def subs(a, b):
+    x = a - b                       # Function of the operations
     return x
-def prod(a,b):
-    x = a*b
+def prod(a, b):
+    x = a * b
     return x
-def div(a,b):
-    x = a/b
+def div(a, b):
+    x = a / b
     return x
-def calculation(first_number):
+def calculation(first_number):                # Calculation function
+    options = {"+": sum, "-": subs, "*": prod, "/": div}          # Dictionary with the operations and their functions
 
-    print("+")
-    print("-")
-    print("*")
-    print("/")
+    for k in options:
+        print(k)
 
     operation = input("Pick an operation: ")
-
-    next_number = float(input("What's the next number?: "))
+    next_number = float(input("What's the next number?: "))       # Varaibles of the program
     decimal = int(input("How many decimals?: "))
 
-    if operation == "+":
-        result = round(sum(first_number, next_number), decimal)
-    if operation == "-":
-        result = round(subs(first_number, next_number), decimal)
-    if operation == "*":
-        result = round(prod(first_number, next_number), decimal)
-    if operation == "/":
-        result = round(div(first_number, next_number), decimal)
-    return (next_number,operation,result)
+    result = options[operation](first_number, next_number)        # With the dictionary we use the operation variable as a key.
+                                                                  # That key has a function as a value so we call it wit the parenthesis
 
-calc = True
+    print(f"{first_number} {operation} {next_number} = {result}")
+
+    return result
+
+calc = True                                                      # Variable so we can create a while loop
 
 while calc == True:
     first_number = float(input("What's the first number?: "))
-    next_number,operation,result = calculation(first_number)
-    print(f"{first_number} {operation} {next_number} = {result}")
+    result = calculation(first_number)
     option = input(f"Type \"ans\" to continue calculating with {result}, type \"new\" to star a new calculation or type \"break\": ")
     if option == "ans":
         calc = False
@@ -45,9 +39,9 @@ while calc == True:
         calc = True
     else:
         break
-while calc == False:
-    next_number,operation,result2 = calculation(result)
-    print(f"{result} {operation} {next_number} = {result2}")
+
+while calc == False:                    # In this case we use the result as first number
+    result = calculation(result)
     option = input(f"Type \"ans\" to continue calculating with {result}, type \"new\" to star a new calculation or type \"break\": ")
     if option == "ans":
         calc = False
