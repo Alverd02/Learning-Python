@@ -29,22 +29,22 @@ def calculation(first_number):                # Calculation function
 
 calc = True                                                      # Variable so we can create a while loop
 
-while calc == True:
+while calc == True:                                              # as long as calc = True we are doing an entirely new claculation
     first_number = float(input("What's the first number?: "))
     result = calculation(first_number)
-    option = input(f"Type \"ans\" to continue calculating with {result}, type \"new\" to star a new calculation or type \"break\": ")
+    option = input(f"Type \"ans\" to continue calculating with {result}, type \"new\" to star a new calculation or type \"break\": ") # Variable for choosing which loop we use
     if option == "ans":
         calc = False
     elif option == "new":
-        calc = True
+        continue
     else:
         break
 
-while calc == False:                    # In this case we use the result as first number
+while calc == False:                    # In this case we use the result of a previous calculation as a first number
     result = calculation(result)
     option = input(f"Type \"ans\" to continue calculating with {result}, type \"new\" to star a new calculation or type \"break\": ")
     if option == "ans":
-        calc = False
+        continue
     elif option == "new":
         calc = True
     else:
