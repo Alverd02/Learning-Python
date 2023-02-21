@@ -2,25 +2,23 @@ import random
 
 play = input("Do you want to play a game of Blackjac? Type \"yes\" or \"no\": ").lower()
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-while play == "yes":
+def new_game():
     user_card = []
     dealer = []
     for _ in range(2):
         user_card.append(random.choice(cards))
     for _ in range(2):
         dealer.append(random.choice(cards))
-    print(f"Your cards are: {user_card}, current score: {sum(user_card)}")
-    print(f"Computer first card: {dealer[0]}")
-    while sum(user_card) < 21:
-        user_next_play = input("Type \"get\" to get a card or type \"pass\" to pass: ")
-        if user_next_play == "get":
-            user_card.append(random.choice(cards))
-            print(f"Your cards are: {user_card}, current score: {sum(user_card)}")
-            print(f"Computer first card: {dealer[0]}")
+    return (user_card,dealer)
+def user_next_play(hand):
+    while sum(hand) < 21:
+        next_play = input("Type \"get\" to get a card or type \"pass\" to pass: ")
+        if next_play == "get":
+            hand.append(random.choice(cards))
         else:
             break
-
-    while sum(dealer) < 21:
+def dealer_next_play(hand):
+    while sum(hand) < 21:
         if sum(dealer) < 17:
             dealer.append(random.choice(cards))
         else:
@@ -29,8 +27,7 @@ while play == "yes":
                 dealer.append(random.choice(cards))
             else:
                 break
-    print(f"Your cards are: {user_card}, current score: {sum(user_card)}")
-    print(f"Your cards are: {dealer}, current score: {sum(dealer)}")
+
     if (sum(dealer) == sum(user_card)) and sum(dealer) <= 21:
         print("It's a draw, you have the same score.")
         play = "no"
@@ -40,6 +37,4 @@ while play == "yes":
     elif sum(dealer) > sum(user_card):
         print("You lose")
         play = "no"
-
-
 
