@@ -1,16 +1,56 @@
-# This is a sample Python script.
+import random
+print("Welcome to the Number Guessing Game!")
+print("I'm thinkingof a number between 1 and 100.")
+game = True
+while game == True:
+    difficulty = input("Chosse a difficulty. Type \"easy\" or \"hard\": ")
+    if difficulty == "easy":
+        attempts = 10
+        number = random.randint(1, 100)
+        while attempts > 0:
+            print(f"You have {attempts} attempts remaining to guess the number")
+            guess = int(input("Make a guess: "))
+            if guess > number:
+                print("Too high")
+                attempts -= 1
+            elif guess < number:
+                print("Too low")
+                attempts -= 1
+            else:
+                print("Correct")
+                attempts = -1
+                again = input("Do you want to play again? Types \"yes\" or \"no\". ")
+                if again == "yes":
+                    game = True
+                else:
+                    game = False
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        if attempts == 0:
+            print("You ran out of attempts")
+    else:
+        attempts = 5
+        number = random.randint(1, 100)
+        while attempts > 0:
+            print(f"You have {attempts} attempts remaining to guess the number")
+            guess = int(input("Make a guess: "))
+            if guess > number:
+                print("Too high")
+                attempts -= 1
+            elif guess < number:
+                print("Too low")
+                attempts -= 1
+            else:
+                print("Correct")
+                attempts = -1
+                again = input("Do you want to play again? Types \"yes\" or \"no\". ")
+                if again == "yes":
+                    game = True
+                else:
+                    game = False
+        if attempts == 0:
+            print("You ran out of attempts")
+            again = input("Do you want to play again? Types \"yes\" or \"no\". ")
+            if again == "yes":
+                game = True
+            else:
+                game = False
