@@ -1,7 +1,5 @@
 import random
-
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-
 def new_game():
     user_card = []
     dealer = []
@@ -13,7 +11,6 @@ def new_game():
     print(f"Your hand: {user_card}, total score: {sum(user_card)}")
     print(f"Dealer first card: {dealer[0]}")
     return (user_card,dealer)
-
 def user_next_play(hand):
     while sum(hand) < 21:
         next_play = input("Type \"get\" to get a card or type \"pass\" to pass: ")
@@ -28,7 +25,6 @@ def user_next_play(hand):
         else:
             break
     return hand
-
 def dealer_next_play(hand):
     while sum(hand) < 21:
         if sum(dealer) < 17:
@@ -46,9 +42,7 @@ def dealer_next_play(hand):
             else:
                 break
     return hand
-
 game = True
-
 while game == True:
     play = input("Do you want to play a game of Blackjac? Type \"yes\" or \"no\": ").lower()
     if play == "yes":
@@ -76,7 +70,10 @@ while game == True:
                 print("The dealer went over 21, you win")
             else:
                 print("Both of you went over ")
+        print(f"Dealer first card: {dealer[0]}")
+        if sum(user_hand) == sum(dealer) and sum(user_hand) < 21:
+            print("It's a draw, both of you have the same core")
     else:
-        game == False
+        break
 
 
