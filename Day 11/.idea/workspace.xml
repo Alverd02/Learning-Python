@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="022216c1-3c6d-4d99-8d23-5244c951c85c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Day 11.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Day 11.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blackjack.py" beforeDir="false" afterPath="$PROJECT_DIR$/Blackjack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day 12/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Day 12/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="022216c1-3c6d-4d99-8d23-5244c951c85c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +32,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "full.screen.before.presentation.mode": "true",
-    "last_opened_file_path": "C:/Users/Albert/Desktop/Learning Python/Day 12",
+    "last_opened_file_path": "C:/Users/Albert/Desktop/Learning Python/Day 14",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -50,7 +44,8 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Albert\AppData\Local\Programs\Python\Python310\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\Albert\AppData\Local\Programs\Python\Python311\python.exe" />
+      <option name="SDK_NAME" value="Python 3.11" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
