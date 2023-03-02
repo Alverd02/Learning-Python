@@ -1,14 +1,15 @@
 from data import *
 
 
-def drink():
+def drink():                            # function for ordering a drink.
     choice = input("What would you like? (espresso/latte/cappuccino): ")
+    # for
     return choice
 
-def check(current_menu):
-    validate_resources = True
-    for i in current_menu:
-        if i == "ingredients":
+def check(current_menu):                # function for checking if there are enough resources.l
+    validate_resources = True           # this vaiable is the one that will tell us if there are resources or not.
+    for i in current_menu:              # the program goes through the dictionary with the menu and the ingredients
+        if i == "ingredients":          # and compare if our resources are enough or not.
             for j in current_menu[i]:
                 if current_menu[i][j] > resources[j]:
                     print(f"Sorry there is not enough {j}")
