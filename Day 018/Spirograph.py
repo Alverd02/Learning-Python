@@ -4,6 +4,8 @@ import random
 tim = Turtle()
 screen = Screen()
 
+
+
 screen.colormode(255)
 
 
