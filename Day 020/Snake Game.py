@@ -2,7 +2,6 @@ import time
 from turtle import Screen
 from Snake import Snake
 from Food import Food
-import random
 
 window = Screen()
 window.setup(600, 600)
@@ -13,26 +12,34 @@ window.tracer(0)
 window.colormode(255)
 
 snake = Snake()
-food = Food()
 
 window.onkey(fun=snake.right, key="d")
 window.onkey(fun=snake.left, key="a")
 window.onkey(fun=snake.up, key="w")
 window.onkey(fun=snake.down, key="s")
 
-play = True
-food.generate()
 
-while play:
-    window.update()
-    time.sleep(0.1)
-    snake.move()
-    if abs(snake.squares[0].position()[0]-food.position[0]) < 20 and abs(snake.squares[0].position()[1]-food.position[1]) < 20:
-        food.generate()
-    else:
-        pass
-    if snake.find_border:
-        snake.write()
-        play = False
+
+def game():
+    food = Food()
+    play = True
+    while play:
+        window.update()
+        time.sleep(0.1)
+        snake.move()
+        if food.apple_object[0].distance(snake.squares[0]) < 20:
+            snake.score_message[0].clear()
+            snake.score += 1
+            snake.write_score()
+            snake.food_eaten += 1
+            food.go_to()
+            snake.more_body()
+        if snake.find_border:
+            snake.write()
+            play = False
+
+
+
+
 
 window.exitonclick()

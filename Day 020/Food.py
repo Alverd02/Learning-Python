@@ -1,19 +1,16 @@
 import random
 from turtle import Turtle
-
-
 class Food:
     def __init__(self):
-        self.position = (0, 0)
-        self.already_generated = True
-
+        self.apple_object = []
+        self.generate()
     def generate(self):
         apple = Turtle()
-        if self.already_generated:
-            apple.color("red")
-            apple.shape("circle")
-            apple.pensize(15)
-            apple.penup()
-            apple.goto(random.randint(-280, 280), random.randint(-280, 280))
-        else:
-            apple.goto(random.randint(-280, 280), random.randint(-280, 280))
+        apple.color("red")
+        apple.shape("circle")
+        apple.pensize(10)
+        apple.penup()
+        apple.goto(random.randint(-280, 280), random.randint(-280, 280))
+        self.apple_object.append(apple)
+    def go_to(self):
+        self.apple_object[0].goto(random.randint(-280, 280), random.randint(-280, 280))

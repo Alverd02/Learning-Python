@@ -1,5 +1,8 @@
 import random
+
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+
 def new_game():
     user_card = []
     dealer = []
@@ -13,10 +16,11 @@ def new_game():
     if sum(dealer) > 21 and 11 in dealer:
         index = dealer.index(11)
         hand[index] = 1
-
     print(f"Your hand: {user_card}, total score: {sum(user_card)}")
     print(f"Dealer first card: {dealer[0]}")
-    return (user_card,dealer)
+    return user_card, dealer
+
+
 def user_next_play(hand):
     while sum(hand) < 21:
         next_play = input("Type \"get\" to get a card or type \"pass\" to pass: ")
@@ -31,6 +35,8 @@ def user_next_play(hand):
         else:
             break
     return hand
+
+
 def dealer_next_play(hand):
     while sum(hand) < 21:
         if sum(dealer) < 17:
@@ -48,11 +54,13 @@ def dealer_next_play(hand):
             else:
                 break
     return hand
+
+
 game = True
 while game == True:
     play = input("Do you want to play a game of Blackjack? Type \"yes\" or \"no\": ").lower()
     if play == "yes":
-        user_hand,dealer = new_game()
+        user_hand, dealer = new_game()
         dealer = dealer_next_play(dealer)
         user_hand = user_next_play(user_hand)
         print(f"Your hand: {user_hand}, total score: {sum(user_hand)}")
@@ -78,5 +86,3 @@ while game == True:
                 print("Both of you went over ")
     else:
         game == False
-
-
