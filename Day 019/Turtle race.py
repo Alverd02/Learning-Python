@@ -20,7 +20,7 @@ def start():
     starter.penup()
     starter.hideturtle()
     starter.forward(30)
-    starter.write("Start", False, align="center", font=("Arial", 15, "normal"))
+    starter.write("Start", False, align="center", font=("Arial", 60, "normal"))
 
 
 def end():
