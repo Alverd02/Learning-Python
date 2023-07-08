@@ -1,5 +1,7 @@
 import random
 from turtle import Turtle
+
+
 class Food:
     def __init__(self):
         self.apple_object = []
