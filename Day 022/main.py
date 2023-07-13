@@ -87,10 +87,10 @@ def game():
         if ball.position()[1] < -280 or ball.position()[1] > 280:
             ball.y = -ball.y
 
-        if score1.score == 3:
+        if score1.score == 5:
             winner_message(-200, 1)
             play = False
-        if score2.score == 3:
+        if score2.score == 5:
             winner_message(200, 2)
             play = False
 
