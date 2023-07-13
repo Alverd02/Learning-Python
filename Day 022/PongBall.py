@@ -1,18 +1,21 @@
+import random
 from turtle import Turtle
 
-class Ball:
+
+class Ball(Turtle):
     def __init__(self):
-        self.ball_object = []
-        self.generate_ball()
-
-
-    def generate_ball(self):
-        ball = Turtle()
-        ball.color("white")
-        ball.shape("circle")
-        ball.penup()
-        self.ball_object.append(ball)
+        super().__init__()
+        self.color("white")
+        self.shape("circle")
+        self.penup()
+        self.x = 5
+        self.y = random.randint(-4, 4)
 
     def move_ball(self):
-        self.ball_object[0].goto(self.ball_object[0].position()[0] + 10, 0)
+        while self.y == 0:
+            self.y = random.randint(1, 5)
+        self.goto(self.xcor() + self.x, self.ycor() + self.y)
 
+    def center_ball(self):
+        self.goto(0, 0)
+        self.x = -self.x
