@@ -1,8 +1,8 @@
-from turtle import Turtle, Screen
+from turtle import Turtle
+from turtle import Screen
 
 tim = Turtle()
 screen = Screen()
-
 
 def move_forward():
     tim.forward(50)

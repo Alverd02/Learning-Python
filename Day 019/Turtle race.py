@@ -77,8 +77,8 @@ def race(turtles):
             if x_2 >= 205:
                 winner = i
                 play = False
-                break
     return winner.color()
+
 
 
 def game():
