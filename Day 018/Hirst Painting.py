@@ -39,6 +39,7 @@ def draw_row(row):
         dot.color(random.choice(color_list))
 
 
+
 for j in range(10):
     draw_row(j)
 
