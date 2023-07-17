@@ -8,8 +8,8 @@ class Ball(Turtle):
         self.color("white")
         self.shape("circle")
         self.penup()
-        self.x = 5
-        self.y = random.randint(-4, 4)
+        self.x = 1
+        self.y = random.randint(-3, 3)
 
     def move_ball(self):
         while self.y == 0:

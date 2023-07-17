@@ -60,12 +60,12 @@ def game():
         time.sleep(0.01)
         ball.move_ball()
 
-        if ball.xcor() < -320 and ball.distance(paddle1) < 50:
-            ball.x = 5
-        if ball.xcor() > 320 and ball.distance(paddle2) < 50:
-            ball.x = -5
+        if ball.xcor() < -350 and ball.distance(paddle1) < 50:
+            ball.x = -ball.x + 1
+        if ball.xcor() > 350 and ball.distance(paddle2) < 50:
+            ball.x = -ball.x - 1
 
-        if ball.position()[0] == 390:
+        if ball.position()[0] > 390:
             score1.score += 1
             score1.clear()
             score1.write(score1.score, False, align="center", font=("Arial", 60, "normal"))
@@ -73,8 +73,8 @@ def game():
             ball.center_ball()
             paddle1.goto(-370, 0)
             paddle2.goto(370, 0)
-            time.sleep(0.25)
-        if ball.position()[0] == -390:
+            ball.x = 1
+        if ball.position()[0] < -390:
             score2.score += 1
             score2.clear()
             score2.write(score2.score, False, align="center", font=("Arial", 60, "normal"))
@@ -82,7 +82,7 @@ def game():
             ball.center_ball()
             paddle1.goto(-370, 0)
             paddle2.goto(370, 0)
-            time.sleep(0.25)
+            ball.x = 1
 
         if ball.position()[1] < -280 or ball.position()[1] > 280:
             ball.y = -ball.y
@@ -97,4 +97,4 @@ def game():
 
 game()
 
-
+window.exitonclick()
