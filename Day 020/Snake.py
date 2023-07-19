@@ -3,9 +3,12 @@ from turtle import Turtle
 
 class Snake:
     def __init__(self):
+        self.high_score = 0
         self.squares = []
         self.snake_body()
         self.find_border = False
+        with open("data") as data:
+            self.high_score = data.read()
         self.food_eaten = 0
         self.score = 0
         self.score_message = []
@@ -13,9 +16,18 @@ class Snake:
 
     def write(self):
         if self.find_border == 1:
-            message = Turtle()
-            message.goto(0, 150)
-            message.write("You lose!!", False, align="center", font=("Arial", 60, "normal"))
+            if self.score > int(self.high_score):
+                with open("data", "w") as data:
+                    self.high_score = self.score
+                    data.write(f"{self.high_score}")
+                # message = Turtle()
+                # message.goto(0, 150)
+                # message.write("You lose!!", False, align="center", font=("Arial", 60, "normal"))
+            # else:
+            #     message = Turtle()
+            #     message.goto(0, 150)
+            #     message.write("You lose!!", False, align="center", font=("Arial", 60, "normal"))
+            self.score = 0
 
     def write_score(self):
         message = Turtle()
@@ -24,7 +36,8 @@ class Snake:
         message.penup()
         message.hideturtle()
         message.goto(0, 275)
-        message.write(f"Score = {self.score}", False, align="center", font=("Arial", 15, "normal"))
+        message.write(f"Score = {self.score} High Score = {self.high_score}", False, align="center",
+                      font=("Arial", 15, "normal"))
 
     def snake_body(self):
         for i in range(3):
@@ -83,3 +96,11 @@ class Snake:
     def down(self):
         if self.squares[0].heading() != 90:
             self.squares[0].setheading(270)
+
+    def reset(self):
+        for i in self.squares:
+            i.hideturtle()
+        self.squares.clear()
+        self.snake_body()
+        self.find_border = False
+        self.food_eaten = 0
