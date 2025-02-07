@@ -12,10 +12,10 @@ def new_game():
         dealer.append(random.choice(cards))
     if sum(user_card) > 21 and 11 in user_card:
         index = user_card.index(11)
-        hand[index] = 1
+        user_card[index] = 1
     if sum(dealer) > 21 and 11 in dealer:
         index = dealer.index(11)
-        hand[index] = 1
+        user_card[index] = 1
     print(f"Your hand: {user_card}, total score: {sum(user_card)}")
     print(f"Dealer first card: {dealer[0]}")
     return user_card, dealer
