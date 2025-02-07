@@ -1,9 +1,10 @@
 from tkinter import *
-
+import requests
 def get_quote():
-    pass
-    #Write your code here.
-
+    quote = requests.get(url="https://api.kanye.rest")
+    quote.raise_for_status()
+    quote = quote.json()["quote"]
+    canvas.itemconfig(quote_text, text=quote)
 
 
 window = Tk()
